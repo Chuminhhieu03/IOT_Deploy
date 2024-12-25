@@ -11,7 +11,7 @@ async def get_all_logs(page: int = Query(1, alias="page"), page_size: int = Quer
     try:
         logs_collection = db["logs"]
         total_logs = logs_collection.count_documents({})
-        logs = logs_collection.find().sort('timestamp', 1).skip(
+        logs = logs_collection.find().sort('timestamp', 0).skip(
             (page - 1) * page_size).limit(page_size)
         logs_list = []
 
@@ -48,7 +48,7 @@ async def get_all_warnings(page: int = Query(1, alias="page"), page_size: int = 
     try:
         logs_collection = db["warnings"]
         total_logs = logs_collection.count_documents({})
-        logs = logs_collection.find().sort('timestamp', 1).skip(
+        logs = logs_collection.find().sort('timestamp', 0).skip(
             (page - 1) * page_size).limit(page_size)
         logs_list = []
 
