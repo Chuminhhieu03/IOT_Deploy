@@ -23,6 +23,8 @@ async def get_all_logs(page: int = Query(1, alias="page"), page_size: int = Quer
                 "name": log.get('name', 'Unknown'),
                 # Get 'entry_time' field or default to 'N/A'
                 "timestamp": log.get('timestamp', 'N/A'),
+                # get 'image' field or default to 'N/A'
+                "image": log.get('image', 'N/A'),
             }
             logs_list.append(log_data)
 
@@ -57,6 +59,8 @@ async def get_all_warnings(page: int = Query(1, alias="page"), page_size: int = 
                 "name": log.get('name', 'Unknown'),
                 # Get 'entry_time' field or default to 'N/A'
                 "timestamp": log.get('timestamp', 'N/A'),
+                # get 'image' field or default to 'N/A'
+                "image": log.get('image', 'N/A'),
             }
             logs_list.append(log_data)
 
